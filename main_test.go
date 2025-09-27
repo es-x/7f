@@ -73,7 +73,6 @@ func TestCafeCount(t *testing.T) {
 			handler.ServeHTTP(response, req)
 
 			require.Equal(t, http.StatusOK, response.Code)
-			//fmt.Println(strings.Split(response.Body.String(), ","), len(strings.Split(response.Body.String(), ",")))
 			str := strings.Split(response.Body.String(), ",")
 			if str[0] != "" {
 				assert.Len(t, str, v.want)
